@@ -39,40 +39,54 @@
 								id="buscador"
 								aria-describedby="buscador"
 								placeholder="Buscar..."
+								v-model="searchInput"
 							/>
 						</div>
 					</div>
 					<hr />
 					<div class="row">
 						<h6 class="text-right col-12">
-							<strong>0</strong>
+							<strong>{{filteredData.length}}</strong>
 							Resultados
 						</h6>
 					</div>
-					<div class="row">
+					<div class="row" v-if="loading">
 						<div class="col-12 text-center my-5">
 							<div class="spinner-border text-secondary" role="status">
 								<span class="sr-only">Cargando...</span>
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-4">
-							<div class="card">
+					<div class="row" v-if="!loading">
+						<div
+							class="col-4"
+							v-for="(user, index) in filteredData"
+							:key="index"
+						>
+							<div class="card mb-3">
 								<!-- 
                                     male: border-info
                                     female: border-success 
                                 -->
-								<div class="card-body border-bottom">
+								<div
+									class="card-body border-bottom"
+									:class="{'border-info': user.gender == 'male', 'border-success': user.gender == 'female'}"
+								>
 									<img
-										src="https://randomuser.me/api/portraits/men/49.jpg"
+										:src="user.picture.large"
 										alt=""
 										class="rounded-circle mb-3 mt-2 mx-auto d-block"
 									/>
-									<h5 class="card-title">Gregorio Ortiz</h5>
-									<h6 class="card-subtitle mb-2 text-muted">39 años</h6>
-									<p class="card-text mb-0">Avenida del Planetario #123</p>
-									<span class="badge badge-secondary">Spain</span>
+									<h5 class="card-title">
+										{{user.name.first}} {{user.name.last}}
+									</h5>
+									<h6 class="card-subtitle mb-2 text-muted">
+										{{user.dob.age}} años
+									</h6>
+									<p class="card-text mb-0">{{user.location.city}}</p>
+									<span class="badge badge-secondary">
+										{{user.location.country}}
+									</span>
 								</div>
 							</div>
 						</div>
