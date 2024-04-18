@@ -1,22 +1,16 @@
-# Prueba tecnica Vue.js [Banco de Chile]
+## Reto - Tabla de Usuarios
 
-#### Instrucciones
+![](https://cdn.dribbble.com/users/103762/screenshots/1440072/media/d5a10dab2ca0deeb12423777fe34544f.jpg)
 
-- Obtener y pintar los datos obtenidos del api:
+### Requerimientos
 
-```js
-https://randomuser.me/api/?results=100
-```
+- Obtener y mostrar los datos obtenidos del api: **`https://randomuser.me/api/?results=100`**
+- Las Cards deben tener un estilo similar al que se muestra en la imagen de arriba, pero debe contener al menos el Nombre, Edad y Dirección del usuario
+- Debe tener un buscador que filtre por nombre o apellido y un filtro de país.
+- Las tarjetas de los usuarios de Mexico deben tener algún tipo de distintivo
+- Mostrar u ocultar un spinner de carga en cada operación
+- Debe tener un contador de resultados que se actualice en cada operación
 
-- Buscador debe filtrar por nombre o apellido
+### Tecnologías
 
-- Cada tarjeta debe tener un color de border-bottom con base en su género:
-
-```css
- male: border-info
- female: border-success
-```
-
-- Mostrar u ocultar el spinner de carga en cada operación
-
-- Actualizar el contador de resultados en cada operación
+- El reto puede ser construido con cualquier tecnología pero recomendamos utilizar **Vue.js 3** y **Taimwind Css**
