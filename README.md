@@ -13,4 +13,4 @@
 
 ### Tecnologías
 
-- El reto puede ser construido con cualquier tecnología pero recomendamos utilizar **Vue.js 3** y **Taimwind Css**
+- El reto puede ser construido con cualquier tecnología pero recomendamos utilizar **Vue.js 3** y **Tailwind Css**
